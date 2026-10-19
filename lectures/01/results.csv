@@ -1,0 +1,13 @@
+model,question,latency_s,input_tokens,output_tokens,total_tokens,error
+gemini-3.5-flash-lite,LoRA とは何ですか？,2.8,7,587,594,
+gemini-3.5-flash-lite,LoRA とは何ですか？,3.22,7,654,661,
+gemini-3.5-flash-lite,LoRA とは何ですか？,4.01,7,803,810,
+gemini-3.5-flash-lite,LoRA と QLoRA の違いを、仕組みとメモリ使用量の観点から詳しく説明してください。,4.65,23,1250,1273,
+gemini-3.5-flash-lite,LoRA と QLoRA の違いを、仕組みとメモリ使用量の観点から詳しく説明してください。,4.51,23,1131,1154,
+gemini-3.5-flash-lite,LoRA と QLoRA の違いを、仕組みとメモリ使用量の観点から詳しく説明してください。,4.38,23,1172,1195,
+gemini-3.5-flash-lite,AIE2026の講座の宿題にある「3レベル」とは何ですか？,3.68,21,775,796,
+gemini-3.5-flash-lite,AIE2026の講座の宿題にある「3レベル」とは何ですか？,3.73,21,744,765,
+gemini-3.5-flash-lite,AIE2026の講座の宿題にある「3レベル」とは何ですか？,3.35,21,763,784,
+gemini-3.8-flash,LoRA とは何ですか？,17.33,7,724,1687,
+gemini-3.8-flash,LoRA と QLoRA の違いを、仕組みとメモリ使用量の観点から詳しく説明してください。,27.23,23,1756,3077,
+gemini-3.8-flash,AIE2026の講座の宿題にある「3レベル」とは何ですか？,19.89,21,693,1893,
