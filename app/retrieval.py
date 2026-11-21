@@ -49,6 +49,19 @@ def load_pages(source: Path = RAG_SOURCE) -> list[dict]:
     return pages
 
 
+def preview(title: str, content: str, limit: int = 120) -> str:
+    """見出しとページタイトルの行を飛ばし、最初の本文の行（要点の1文）を返す。"""
+    squash = lambda s: re.sub(r"\s+", "", s)
+    lines = [line.strip() for line in content.strip().splitlines() if line.strip()]
+    start = 0
+    for i, line in enumerate(lines[:3]):  # 見出し・タイトルは冒頭の数行にある
+        if squash(line) == squash(title):
+            start = i + 1
+            break
+    body = lines[start:] or lines
+    return body[0][:limit]
+
+
 def browse_tree(node_id: str | None = None) -> dict:
     """直下のページは先頭文、指定したページ自身は全文を返す。"""
     tree = json.loads(RAG_TREE.read_text(encoding="utf-8"))
@@ -61,7 +74,7 @@ def browse_tree(node_id: str | None = None) -> dict:
         if node["kind"] == "page":
             info.update({key: value for key, value in pages[node["id"]].items() if key != "page_id"})
             if not full:
-                info["content"] = re.split(r"(?<=[。！？])|\n", info["content"].strip(), maxsplit=1)[0]
+                info["content"] = preview(info["title"], info["content"])
         return info
 
     remaining = [tree]
